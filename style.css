@@ -1,0 +1,141 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#drum-machine {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Theme Switcher Buttons */
+#theme-switcher {
+  margin-bottom: 20px;
+}
+
+#theme-switcher button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Drum Pads Grid */
+#pads {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pad {
+  background-color: var(--pad-color);
+  color: var(--text-color);
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.pad.active {
+  background-color: var(--active-pad-color);
+}
+
+/* Sequencer Container */
+#sequencer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Each row in the sequencer */
+.sequencer-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sequencer-row label {
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.sequencer-row .sequencer {
+  display: grid;
+  grid-template-columns: repeat(16, 30px);
+  gap: 5px;
+}
+
+/* Steps within the sequencer */
+.step {
+  width: 30px;
+  height: 30px;
+  background: var(--pad-color);
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+  transition: background 0.2s;
+}
+
+.step.active {
+  background: var(--active-pad-color);
+}
+
+/* Playback Controls */
+#controls {
+  margin-top: 20px;
+}
+
+#controls button, #controls label {
+  margin: 5px;
+}
+
+/* Sound Loader */
+#sound-loader {
+  margin-top: 20px;
+}
+
+/* CSS Variables for Themes */
+:root {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --pad-color: #333;
+  --active-pad-color: #555;
+}
+
+:root[data-theme='light'] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --pad-color: #ddd;
+  --active-pad-color: #bbb;
+}
+
+:root[data-theme='neon'] {
+  --bg-color: #000000;
+  --text-color: #39ff14;
+  --pad-color: #1a1a1a;
+  --active-pad-color: #ff00ff;
+}
+
+
+
+:root[data-theme='ocean'] {
+  --bg-color: #130068;
+  --text-color: #ffffff;
+  --pad-color: #004a75;
+  --active-pad-color: #3099b9;
+}
